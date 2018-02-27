@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
   <head>
-    <title>Appchallenge</title>
+    <title>GIMPA Appchallenge</title>
     <%= csrf_meta_tags %>
-    <meta name="description" content="Registering for GIMPA APP CHALLENGE" />
-    <meta name="author" content="Miracle Anyanwu (Polygod)">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="Registering for GIMPA APP CHALLENGE" />
+      <meta name="author" content="Miracle Anyanwu (Polygod)">
+      <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= yield %>
 
-    <%= render 'shared/footer' %>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= render 'shared/footer' %>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"></script>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
+
 </html>
