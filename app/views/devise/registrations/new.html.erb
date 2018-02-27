@@ -1,0 +1,44 @@
+<div class="container">
+  <h2 class="text-center white m-t-50">TRAGEN</h2>
+  <div class="row m-t-40">
+    <div class="col d-flex justify-content-center">
+      <div class="card" style="width: 25rem;">
+        <div class="card-body">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <div class="text-center">
+              <h5 class="text-uppercase" style="margin-bottom: 2px;">Get started</h4>
+              <small class="text-muted">A minute away from your first ride</small> <hr>
+            </div>
+            <%= render 'shared/error_message', object: f.object %>
+            
+            <div class="form-group">
+              <%= f.label :email %>
+              <%= f.email_field :email, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :password %>
+                <% if @minimum_password_length %>
+                  <small class="text-muted">(<%= @minimum_password_length %> characters minimum)</small>
+                <% end %>
+              <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+            </div>
+            <%= f.submit "Get Started", class: 'btn btn-info btn-block' %>
+            <% end %>
+            
+          </div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="row m-t-20">
+    <div class="col d-flex justify-content-center">
+      <p class="text-muted">Already have an account? <small><%= render "devise/shared/links" %></small> </p>
+    </div>
+  </div>
+  
+</div>           
+                

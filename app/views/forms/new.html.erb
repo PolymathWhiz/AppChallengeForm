@@ -1,0 +1,52 @@
+<style>
+  body {
+    background-color: #373a40 !important;
+  }
+</style>
+
+
+<div class="container">
+  <h4 class="text-center m-t-50 text-white"> GIMPA APP CHALLENGE </h4>
+  <div class="row m-t-40">
+    <div class="col d-flex justify-content-center">
+      <div class="card" style="width: 25rem;">
+        <div class="card-body">
+
+          <%= form_for(@form, url: forms_path) do |f| %>
+
+            <div class="text-center">
+              <h5 class="text-uppercase" style="margin-bottom: 2px;">Reservation Form</h5>
+              <hr>
+              <!--<h6 style="color: red; margin-bottom: 10px !important;"></h6>-->
+            </div>
+            <%= render 'shared/error_message', object: f.object %>
+            <%= render 'shared/flash_message' %>
+
+            <div class="form-group">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name, class: 'form-control', placeholder: 'Miracle' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name, class: 'form-control', placeholder: 'Anyanwu' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :phone %>
+              <%= f.telephone_field :phone, class: 'form-control', placeholder: '0574017761', max: 10%>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :type %>
+              <%= f.select :category, options_for_select(Form.categories.keys), {prompt: "Select Type"}, class: "form-control" %>
+            </div>
+
+            <%= f.submit "Reserve", class: 'btn btn-primary btn-block' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

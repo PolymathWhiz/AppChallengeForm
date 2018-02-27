@@ -1,0 +1,43 @@
+<div class="container">
+  <h2 class="text-center white m-t-50">Mobex Form</h2>
+  <div class="row m-t-50">
+    <div class="col d-flex justify-content-center">
+      <div class="card" style="width: 25rem;">
+        <div class="card-body">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="text-center">
+              <h5 class="text-uppercase" style="margin-bottom: 2px;">log in</h4> <hr>
+            </div>
+              <%= render 'shared/devise_flash' %>
+           
+            <div class="form-group">
+              <%= f.label :email %>
+              <%= f.email_field :email, autofocus: true,class: 'form-control' %>
+            </div>
+          
+            <div class="form-group">
+              <%= f.label :password %> 
+              <small style="float: right;"><b><%= link_to "Forgot password?", new_password_path(resource_name) %></b></small>
+              <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+            </div>
+            
+            <% if devise_mapping.rememberable? -%>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <%= f.check_box :remember_me, class: 'form-check-input' %>
+                  Remember me
+                </label>
+              </div>
+
+            <% end -%>
+            
+            <%= f.submit "Login", class: 'btn btn-info btn-block' %>
+            <% end %>  
+          </div>
+        </div>
+    </div>
+  </div>
+
+  
+</div>           
+                
