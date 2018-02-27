@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'forms#new'
   devise_for :users
-  resources :forms
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_scope :admin do
+    resources :users, only: [:show]
+  end
+  resources :forms, only: [:new, :create]
 end

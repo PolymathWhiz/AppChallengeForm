@@ -17,36 +17,35 @@
             <div class="text-center">
               <h5 class="text-uppercase" style="margin-bottom: 2px;">Reservation Form</h5>
               <hr>
-              <!--<h6 style="color: red; margin-bottom: 10px !important;"></h6>-->
+              <!--<h6 style="color: red; margin-bottom: 10px !important;">Event Date: 16th March, 2018.</h6>-->
             </div>
             <%= render 'shared/error_message', object: f.object %>
-            <%= render 'shared/flash_message' %>
+              <%= render 'shared/flash_message' %>
 
-            <div class="form-group">
-              <%= f.label :first_name %>
-              <%= f.text_field :first_name, class: 'form-control', placeholder: 'Miracle' %>
-            </div>
+                <div class="form-group">
+                  <%= f.label :first_name %>
+                    <%= f.text_field :first_name, class: 'form-control', placeholder: 'Miracle' %>
+                </div>
 
-            <div class="form-group">
-              <%= f.label :last_name %>
-              <%= f.text_field :last_name, class: 'form-control', placeholder: 'Anyanwu' %>
-            </div>
+                <div class="form-group">
+                  <%= f.label :last_name %>
+                    <%= f.text_field :last_name, class: 'form-control', placeholder: 'Anyanwu' %>
+                </div>
 
-            <div class="form-group">
-              <%= f.label :phone %>
-              <%= f.telephone_field :phone, class: 'form-control', placeholder: '0574017761', max: 10%>
-            </div>
+                <div class="form-group">
+                  <%= f.label :phone %>
+                    <%= f.telephone_field :phone, class: 'form-control', placeholder: '0574017761', maxlength: 10%>
+                </div>
 
-            <div class="form-group">
-              <%= f.label :type %>
-              <%= f.select :category, options_for_select(Form.categories.keys), {prompt: "Select Type"}, class: "form-control" %>
-            </div>
+                <div class="form-group">
+                  <%= f.label :Category %>
+                    <%= f.select :category, options_for_select(Form.categories.keys), {prompt: "Select Category"}, class: "form-control" %>
+                </div>
 
-            <%= f.submit "Reserve", class: 'btn btn-primary btn-block' %>
-          <% end %>
+                <%= f.submit "Reserve", class: 'btn btn-primary btn-block' %>
+                  <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
-

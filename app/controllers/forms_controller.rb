@@ -1,4 +1,7 @@
 class FormsController < ApplicationController
+
+  before_action :re_route
+
   def new
     @form = Form.new
   end
@@ -17,5 +20,11 @@ class FormsController < ApplicationController
 
   def form_params
     params.require(:form).permit(:first_name, :last_name, :category, :phone)
+  end
+
+   before_action :re_route
+
+  def re_route
+    redirect_to user_path(current_user.id) if current_user
   end
 end

@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">GIMPA APP CHALLENGE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a href="<%= destroy_user_session_path %>" data-method="delete" rel="nofollow" class="nav-link">Sign Out</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2" style="margin-top: 20px;">
+      Android:
+      <span>
+        <%= @android %>
+      </span>
+      <br> Web:
+      <span>
+        <%= @web %>
+      </span>
+      <br> Problem Solvers:
+      <span>
+        <%= @problem %>
+      </span>
+      <br> Other:
+      <span>
+        <%= @other  %>
+      </span>
+      <br> Total:
+      <span>
+        <%= @total %>
+      </span>
+    </div>
+    <div class="col-md-9">
+      <%= render 'shared/flash_message' %>
+        <center>
+          <h4 style="margin-top: 20px; margin-bottom: 20px;">Registered Students</h4>
+        </center>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Phone number</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @list.each_with_index do |list, count|%>
+              <% count += 1 %>
+                <tr>
+                  <th scope="row">
+                    <%= count %>
+                  </th>
+                  <td>
+                    <%= list.first_name %>
+                  </td>
+                  <td>
+                    <%= list.last_name %>
+                  </td>
+                  <td>
+                    <%= list.phone %>
+                  </td>
+                  <td>
+                    <%= list.category %>
+                  </td>
+                </tr>
+                <% end %>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+</div>

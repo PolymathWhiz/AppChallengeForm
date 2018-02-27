@@ -6,7 +6,7 @@ class Form < ApplicationRecord
 
   validates_presence_of :first_name, :last_name, :category, :phone
 
-  validates :phone, format: { with: VALID_MOBILE_REGEX, multiline: true }, allow_blank: true
+  validates :phone, format: { with: VALID_MOBILE_REGEX, multiline: true }, allow_blank: true, length: { maximum: 10 }
 
   validates :category, inclusion: {in: categories.keys}, allow_blank: true
 end
