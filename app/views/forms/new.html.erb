@@ -8,45 +8,77 @@
 <div class="container">
   <h4 class="text-center m-t-50 text-white"> GIMPA APP CHALLENGE </h4>
   <div class="row m-t-40">
-    <div class="col d-flex justify-content-center">
-      <div class="card" style="width: 25rem;">
+    <div class="col-md-4 col-lg-4 d-flex">
+      <div class="card" style="width: 25rem; margin-bottom: 20px;">
         <div class="card-body">
-
-          <%= form_for(@form, url: forms_path) do |f| %>
-
-            <div class="text-center">
-              <h5 class="text-uppercase" style="margin-bottom: 2px;">Reservation Form</h5>
-              <hr>
-              <small style="color: red; margin-bottom: 10px !important;">Event Date: 28th March, 2018.</small>
-              <hr>
-            </div>
-            <%= render 'shared/error_message', object: f.object %>
-              <%= render 'shared/flash_message' %>
-
-                <div class="form-group">
-                  <%= f.label :first_name %>
-                    <%= f.text_field :first_name, class: 'form-control', placeholder: 'Miracle' %>
-                </div>
-
-                <div class="form-group">
-                  <%= f.label :last_name %>
-                    <%= f.text_field :last_name, class: 'form-control', placeholder: 'Anyanwu' %>
-                </div>
-
-                <div class="form-group">
-                  <%= f.label :phone %>
-                    <%= f.telephone_field :phone, class: 'form-control', placeholder: '0574017761', maxlength: 10%>
-                </div>
-
-                <div class="form-group">
-                  <%= f.label :Category %>
-                    <%= f.select :category, options_for_select(Form.categories.keys), {prompt: "Select Category"}, class: "form-control" %>
-                </div>
-
-                <%= f.submit "Reserve", class: 'btn btn-primary btn-block' %>
-                  <% end %>
+          <h5 class="card-title">Hackathon Criteria</h5>
+          <hr>
+          <p class="card-text">
+            The list below shows the categories of apps which can be submitted/presented there
+          </p>
+            <ul type="circle" class="card-text">
+              <li>Education Sector</li>
+              <li>Health Sector</li>
+              <li>Finance Sector</li>
+              <li>Agriculture Sector</li>
+            </ul>
+          <hr>
+          <p class="card-text">Other participating schools includes: </p>
+          <ul type="square">
+            <li>Kwame Nkrumah University of Science and Technology (KNUST)</li>
+            <li>Ashesi University</li>
+            <li>The University of Ghana, Legon (UG)</li>
+            <li>Wisconsin University</li>
+            <li>Ghana Telecom University</li>
+            <li>Methodist University</li>
+            <li>Bluecrest University College</li>
+            <li>University of Professional Studies (UPS)</li>
+          </ul>
         </div>
       </div>
+    </div>
+    <div class="col-md-2 col-lg-2"></div>
+    <div class="col-md-6 col-lg-6">
+
+        <div class="card" style="width: 25rem;">
+          <div class="card-body">
+
+            <%= form_for(@form, url: forms_path) do |f| %>
+
+              <div class="text-center">
+                <h5 class="text-uppercase" style="margin-bottom: 2px;">Reservation Form</h5>
+                <hr>
+                <small style="color: red; margin-bottom: 10px !important;">Event Date: 28th March, 2018.</small>
+                <hr>
+              </div>
+              <%= render 'shared/error_message', object: f.object %>
+              <%= render 'shared/flash_message' %>
+
+              <div class="form-group">
+                <%= f.label :first_name %>
+                <%= f.text_field :first_name, class: 'form-control', placeholder: 'e.g Nicholina' %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :last_name %>
+                <%= f.text_field :last_name, class: 'form-control', placeholder: 'e.g Doe' %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :phone %>
+                <%= f.telephone_field :phone, class: 'form-control', placeholder: 'e.g 0574017761', maxlength: 10 %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :Category %>
+                <%= f.select :category, options_for_select(Form.categories.keys), {prompt: "Select Category"}, class: "form-control" %>
+              </div>
+
+              <%= f.submit "Submit", class: 'btn btn-primary btn-block' %>
+            <% end %>
+          </div>
+        </div>
+
     </div>
   </div>
 </div>
